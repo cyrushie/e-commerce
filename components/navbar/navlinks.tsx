@@ -16,11 +16,11 @@ const NavLinks = () => {
                         className=" capitalize "
                         variant={path === link.href ? "default" : "link"}
                         key={link.label}
+                        asChild
                     >
                         <Link
                             className="text-foreground"
                             href={link.href}
-                            asChild
                         >
                             {link.label}
                         </Link>

@@ -1,12 +1,11 @@
-import PageHeader from "../../_components/page-header.tsx";
-import AddProductForm from "../_components/add-product-form.tsx";
+import AddProductForm from "../_components/add-product-form";
 
 const NewProductsPage = () => {
-    return (
-        <div className="max-container pb-8">
-            <AddProductForm />
-        </div>
-    );
+  return (
+    <div className="max-container pb-8">
+      <AddProductForm />
+    </div>
+  );
 };
 
 export default NewProductsPage;

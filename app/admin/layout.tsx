@@ -1,16 +1,16 @@
 import Nav from "@/components/navbar/nav";
 
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 
 export default function AdminLayout({
-    children
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <div>
-             <Nav>admin nav</Nav>
-            {children}
-        </div>
-    );
+  return (
+    <div>
+      <Nav />
+      {children}
+    </div>
+  );
 }

@@ -1,22 +1,21 @@
-import PageHeader from "../_components/page-header.tsx";
+import PageHeader from "../_components/page-header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import ProductsTable from "../_components/products-table.tsx";
+import ProductsTable from "../_components/products-table";
 
 const AdminPrductsPage = () => {
-    return (
-        <div className="max-container">
-            <div className=" flex justify-between items-center gap-4 mb-8">
-                <PageHeader>Products</PageHeader>
+  return (
+    <div className="max-container">
+      <div className=" flex justify-between items-center gap-4 mb-8">
+        <PageHeader>Products</PageHeader>
 
-                <Button asChild>
-                    <Link href="/admin/products/new">Add Product</Link>
-                </Button>
-            </div>
-
-            <ProductsTable />
-        </div>
-    );
+        <Button asChild>
+          <Link href="/admin/products/new">Add Product</Link>
+        </Button>
+      </div>
+      <ProductsTable />
+    </div>
+  );
 };
 
 export default AdminPrductsPage;
