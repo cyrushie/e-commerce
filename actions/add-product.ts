@@ -4,6 +4,7 @@ import * as z from "zod";
 import { db } from "@/lib/db";
 import fs from "fs/promises";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export const addProduct = async (data: FormData) => {
   console.log(data);
@@ -34,5 +35,7 @@ export const addProduct = async (data: FormData) => {
     },
   });
 
+  revalidatePath("/");
+  revalidatePath("/products");
   redirect("/admin/products");
 };

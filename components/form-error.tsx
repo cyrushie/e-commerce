@@ -1,5 +1,5 @@
 interface FormErrorProps {
-  message: string;
+  message: string | undefined;
 }
 
 const FormError = ({ message }: FormErrorProps) => {

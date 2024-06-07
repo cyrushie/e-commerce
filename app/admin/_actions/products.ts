@@ -1,7 +1,9 @@
 "use server";
 
+import fs from "fs/promises";
 import { db } from "@/lib/db";
 import { notFound } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 export const availabilityToggle = async (
   id: string,
@@ -11,6 +13,9 @@ export const availabilityToggle = async (
     where: { id },
     data: { isAvailableForPurchase },
   });
+
+  revalidatePath("/");
+  revalidatePath("/products");
 };
 
 export const deleteProduct = async (id: string) => {
@@ -19,4 +24,10 @@ export const deleteProduct = async (id: string) => {
   });
 
   if (!product) return notFound();
+
+  await fs.unlink(product.filePath);
+  await fs.unlink(`public/${product.imagePath}`);
+
+  revalidatePath("/");
+  revalidatePath("/products");
 };

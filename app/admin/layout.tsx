@@ -9,7 +9,7 @@ export default function AdminLayout({
 }) {
   return (
     <div>
-      <Nav />
+      <Nav admin={true} />
       {children}
     </div>
   );

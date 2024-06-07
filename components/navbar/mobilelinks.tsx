@@ -1,6 +1,6 @@
 "use client";
 
-import { links } from "@/lib/utils";
+import { adminLinks, homeLinks } from "@/lib/utils";
 import {
     Sheet,
     SheetTrigger,
@@ -13,8 +13,9 @@ import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const MobileLinks = () => {
+const MobileLinks = ({ admin }: { admin: boolean }) => {
     const path = usePathname();
+    const links = admin ? adminLinks : homeLinks
 
     return (
         <Sheet>
